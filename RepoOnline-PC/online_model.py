@@ -12,13 +12,14 @@ class ProgramasOnline(models.Model):
         fichero = fields.Char('Fichero con el código fuente')
         codigo = fields.Binary('Código de la aplicación')
 
-
+#función que incrementa el número de versión actual y establece la fecha actual
 	@api.one
 	def aumentar_version(self):
 		self.version = self.version + 1
 		self.fecha = fields.Date.today()
 		return True
 
+#función que marca como finalizada (en caso de no estar finalizada)
 	@api.one
 	def marcar_finalizada(self):
 		if not self.finalizada:

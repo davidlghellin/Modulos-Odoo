@@ -8,5 +8,6 @@
         'summary':      'Este es el summary',
         'website':      'www.iesdealquerias.es',
 
+	#fichero donde se encuentra la vista
         'data':         ['online_view.xml'],
 }
