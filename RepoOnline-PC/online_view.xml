@@ -6,60 +6,62 @@
                         res_model="programas.online"
                         view_mode="tree,form"/>
 
-		<menuitem id="menu_online" 
-			name="Programacion onlinePC" 
-			action="action_online_pc"/>
-	
-	<record id="vista_fromulario_online_pc" model="ir.ui.view">
-		<field name="name">Online PC Formulario</field>
-		<field name="model">programas.online</field>
-		<field name="arch" type="xml">
+                <menuitem id="menu_online" 
+                        name="Programacion onlinePC" 
+                        action="action_online_pc"/>
 
-			<form>
-				<header>
-					<button name="marcar_finalizada" type="object" string="Marcar aplicación como finalizada" class="oe_highlight"/>
-					<button name="aumentar_version" type="object" string="Nueva versión"/>
-				</header>
+        <record id="vista_fromulario_online_pc" model="ir.ui.view">
+                <field name="name">Online PC Formulario</field>
+                <field name="model">programas.online</field>
+                <field name="arch" type="xml">
 
-				<sheet>
-					<group name="group_top">
-						<group name="group_left">
-							<field name="nombre"/>
-							<field name="lenguaje"/>
-							<field name="precio"/>
-						</group>
-						<group name="group_right">
-							<field name="version"/>
-							<field name="fecha"/>
-							<field name="finalizada"/>
-						</group>
-					</group>
-					<group>  
-						<field name="descripcion"/>
+                        <form>
+
+                                <header>
+                                        <button name="marcar_finalizada" type="object" string="Marcar aplicación como finalizada" class="oe_highlight"/>
+                                        <button name="aumentar_version" type="object" string="Nueva versión"/>
+                                </header>
+
+                                <sheet>
+                                        <group name="group_top">
+                                                <group name="group_left">
+                                                        <field name="nombre"/>
+                                                        <field name="lenguaje"/>
+                                                        <field name="precio"/>
+                                                </group>
+                                                <group name="group_right">
+                                                        <field name="version"/>
+                                                        <field name="fecha"/>
+                                                        <field name="finalizada"/>
+                                                </group>
+                                        </group>
+                                        <group>
+                                                <field name="descripcion"/>
                                                 <field name="fichero" invisible="0"/>
                                                 <field widget="binary" height="64" name="codigo" filename="fichero" />
+                                        </group>
+                                </sheet>
+                        </form>
+                </field>
+        </record>
 
-					</group>
-				</sheet>			
-			</form>
-		</field>
-	</record>
+        <!-- vista de lista (tree)-->
+        <record id="vista_tree_online_pc" model="ir.ui.view">
+                <field name="name">Online PC tree</field>
+                <field name="model">programas.online</field>
+                <field name="arch" type="xml">
+                        <tree >
+                                <field name="nombre"/>
+                                <field name="lenguaje"/>
+                                <field name="precio"/>
+                                <field name="version"/>
+                                <field name="fecha"/>
+                                <field name="finalizada"/>
+                                <field name="descripcion"/>
+                        </tree>
+                </field>
+        </record>
 
-	<!-- vista de lista (tree)-->
-	<record id="vista_tree_online_pc" model="ir.ui.view">
-		<field name="name">Online PC tree</field>
-		<field name="model">programas.online</field>
-		<field name="arch" type="xml">
-			<tree >
-				<field name="nombre"/>
-				<field name="lenguaje"/>
-				<field name="precio"/>
-				<field name="version"/>
-				<field name="fecha"/>
-				<field name="finalizada"/>
-				<field name="descripcion"/>
-			</tree>
-		</field>
-	</record>
         </data>
 </openerp>
+

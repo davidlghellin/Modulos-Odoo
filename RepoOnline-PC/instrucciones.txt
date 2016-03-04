@@ -1,0 +1,6 @@
+como root:
+	crear carpeta /opt/odoo/customAddons
+agregar en /etc/odoo-server.conf la ruta de modulos 
+,/opt/odoo/customAddons
+
+crear carpeta onlinePc
