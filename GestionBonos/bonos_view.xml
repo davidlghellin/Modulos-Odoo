@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<openerp>
+        <data>
+		<act_window id="action_bonos"
+			name="Bonos"
+			res_model="bonos.model"
+			view_mode="tree,form"/>
+
+	<!--<menuitem id="menu_bonos" 
+			name="Gestión bonos" 
+			action="action_bonos"/>
+	-->
+<menuitem id="menu_bonos" name="Gestionar Bonos" parent="izq_menu_cliente" action="action_bonos"/>
+
+	<record id="vista_fromulario_bonos" model="ir.ui.view">
+                <field name="name">Bonos Form</field>
+                <field name="model">bonos.model</field>
+                <field name="arch" type="xml">
+
+			<form>
+				<header>
+					<button name="decrementar_bono" type="object" string="Decrementar bono" class="oe_highlight"/>
+				</header>
+
+			        <sheet>
+					<group name="group_top">
+						<field name="nbonos"/>
+					</group>
+		                        <group>
+		                                <field name="usos" />
+		                        </group>
+		                </sheet>
+		        </form>
+                </field>
+	</record>
+
+ 	<record id="vista_tree_bonos" model="ir.ui.view">
+                <field name="name">Bonos tree</field>
+                <field name="model">bonos.model</field>
+                <field name="arch" type="xml">
+                        <tree >
+                                <field name="clienteID"/>
+                                <field name="nbonos"/>
+                        </tree>
+                </field>
+        </record>
+
+
+        </data>
+</openerp>

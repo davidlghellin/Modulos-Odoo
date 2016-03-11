@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<act_window id="action_cliente"
+			name="Cliente"
+			res_model="cliente.model"
+			view_mode="tree,form"/>
+<!---->
+<menuitem id="top_menu_cliente" name="Gestión de bonos"/>		
+<menuitem id="izq_menu_cliente" name="Cliente" parent="top_menu_cliente"/>
+<menuitem id="menu_cliente" name="Gestionar Clientes" parent="izq_menu_cliente" action="action_cliente"/>
+		
+<!---->
+
+	<!--	<menuitem id="menu_cliente" 
+			name="Mis clientes" 
+			action="action_cliente"/>  -->
+
+		<record id="vista_fromulario_cliente" model="ir.ui.view">
+			<field name="name">Cliente Formulario</field>
+			<field name="model">cliente.model</field>
+			<field name="arch" type="xml">
+
+				<form>
+				<sheet>
+					<group name="group_top">
+						<group name="group_left">
+							<field name="nombre"/>
+						</group>
+					</group>
+					<group>
+						<field name="direccion"/>
+						<field name="telefono"/>
+						<field name="bonos" widget="one2many_list"/>
+					</group>
+				</sheet>
+				</form>
+			</field>
+		</record>
+
+	<record id="vista_tree_cliente" model="ir.ui.view">
+                <field name="name">Cliente tree</field>
+                <field name="model">cliente.model</field>
+                <field name="arch" type="xml">
+                        <tree >
+                                <field name="nombre"/>
+                                <field name="telefono"/>
+                        </tree>
+                </field>
+        </record>
+
+	</data>
+</openerp>
